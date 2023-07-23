@@ -1,5 +1,10 @@
 {
   "sections": {
+    "sv-carousel": {
+      "type": "sv-carousel",
+      "settings": {
+      }
+    },
     "image-with-text": {
       "type": "image-with-text",
       "blocks": {
@@ -66,6 +71,7 @@
     }
   },
   "order": [
+    "sv-carousel",
     "image-with-text",
     "featured_collection"
   ]

@@ -1,20 +1,100 @@
+<link
+  rel="stylesheet"
+  href="{{ 'swipper-bundle.min.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'">
 
-{% comment %} <link rel="stylesheet" href="{{ 'component-list-menu.css' | asset_url }}" media="print" onload="this.media='all'"> {% endcomment %}
-<div>
-    <h1>
-        Hellooo
-    </h1>
+<link
+  rel="stylesheet"
+  href="{{ 'section-sv-carousel.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'">
+
+<script src="{{ 'swiper-bundle.min.mjs' | asset_url }}" defer="defer"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', (event) => {
+    var swiper = new Swiper(".carousel-swiper", {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      autoplay: true,
+      loop: true,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
+      }
+    });
+  });
+</script>
+
+<div class="sv-carousel">
+  <div class="swiper carousel-swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+          {%- assign widths = '165, 360, 535, 750, 1070, 1500, 3840' -%}
+          {%- capture sizes -%}
+            (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px,
+            (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)
+            (min-width: 3840px) 4096px
+          {%- endcapture -%}
+          {{
+            section.settings.image
+            | image_url: width: 4096
+            | image_tag: loading: 'lazy', sizes: sizes, widths: widths
+          }}
+      </div>
+      <div class="swiper-slide">
+        2
+      </div>
+      <div class="swiper-slide">
+        3
+      </div>
+      <div class="swiper-slide">
+        4
+      </div>
+    </div>
+    <div class="swiper-arrow-next-wrapper">
+      <div class="swiper-arrow swiper-button-next"></div>
+    </div>
+    <div class="swiper-arrow-prev-wrapper">
+      <div class="swiper-arrow swiper-button-prev"></div>
+    </div>
+  </div>
 </div>
+
+{% style %}
+  div:empty {
+    display: block;
+  }
+{% endstyle %}
+
 {% schema %}
-{
-    "name": "SV - Carousel",
-    "class": "section",
+  {
+    "name": "Carousel",
+    "class": "index-section",
     "settings": [
-        {
+      {
         "type": "image_picker",
         "id": "image",
         "label": "t:sections.image-with-text.settings.image.label"
-        }
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "My Custom Title"
+      }, {
+        "type": "textarea",
+        "id": "text",
+        "label": "Text",
+        "default": "This is a custom text section."
+      }
+    ],
+    "presets": [
+      {
+        "name": "SV - Carousel",
+        "category": "Custom"
+      }
     ]
-}
+  }
 {% endschema %}
