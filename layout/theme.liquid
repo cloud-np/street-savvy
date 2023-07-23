@@ -275,6 +275,7 @@
     {% sections 'header-group' %}
 
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
+      {% comment %} <img class="visually-hidden" src="{{ 'icon-cart.svg' | file_url }}" alt=""/> {% endcomment %}
       {{ content_for_layout }}
     </main>
 
