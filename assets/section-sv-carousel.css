@@ -52,13 +52,9 @@
     height: 40px;
 }
 
-.swiper-button-next,
-.swiper-button-prev {
-    /* left: 10px; */
-}
 .swiper-button-inner-numbers {
     position: absolute;
-    top: 7px;
+    top: 5px;
 }
 
 .swiper-button-prev > span {
@@ -69,9 +65,6 @@
     right: 50px;
 }
 
-.inner {
-    right: 50px;
-}
 
 .swiper-button-next::before,
 .swiper-button-next::after {
@@ -89,14 +82,28 @@
 .swiper-button-prev::after {
     content: "";
     position: absolute;
-    width: 3px;
-    height: 13px;
+    width: 2px;
+    height: 20px;
+    top: -7px;
     border-radius: 2px;
     background: #fff;
     transition: all 0.1s ease-out;
 }
 
-.swiper-button-next::before,
+.swiper-button-next::before {
+    top: 50%;
+    left: 50%;
+    transform: translateY(-45%);
+    transform-origin: bottom center;
+}
+
+.swiper-button-next::after {
+    bottom: 50%;
+    left: 50%;
+    transform: translateY(50%);
+    transform-origin: top center;
+}
+
 .swiper-button-prev::after {
     top: 50%;
     left: 50%;
@@ -104,67 +111,24 @@
     transform-origin: bottom center;
 }
 
-.swiper-button-next::after,
 .swiper-button-prev::before {
     bottom: 50%;
     left: 50%;
-    transform: translateY(45%);
+    transform: translateY(50%);
     transform-origin: top center;
 }
 
-.swiper-button-next:hover::before,
-.swiper-button-prev:hover::after {
-    transform: translateY(-45%) rotate(45deg);
+.swiper-button-next:hover::before {
+    transform: translateY(-50%) rotate(45deg);
 }
-
-.swiper-button-next:hover::after,
-.swiper-button-prev:hover::before {
+.swiper-button-next:hover::after {
     transform: translateY(45%) rotate(-45deg);
 }
 
-/* .swiper-button-next::before,
-.swiper-button-next::after,
-.swiper-button-prev::before,
-.swiper-button-prev::after {
-    content: "";
-    position: absolute;
-    width: 3px;
-    height: 13px;
-    border-radius: 2px;
-    background: #fff;
-    transition: all 0.1s ease-out;
-}
-
-.swiper-button-next::before {
-    transform: translateY(-50%) rotate(0deg);
-}
-
-.swiper-button-next::after {
-    top: 50%;
-    transform: translateY(-50%) rotate(0deg);
-}
-
-.swiper-button-prev::before {
-    transform: translateY(-50%) rotate(0deg);
-}
-
-.swiper-button-prev::after {
-    top: 50%;
-    transform: translateY(-50%) rotate(0deg);
-}
-
-.swiper-button-next:hover::before {
-    transform: translateY(0%) rotate(-45deg);
-}
-
-.swiper-button-next:hover::after {
-    transform: translateY(0%) rotate(45deg);
+.swiper-button-prev:hover::after {
+    transform: translateY(-45%) rotate(-45deg);
 }
 
 .swiper-button-prev:hover::before {
-    transform: translateY(0%) rotate(45deg);
+    transform: translateY(50%) rotate(45deg);
 }
-
-.swiper-button-prev:hover::after {
-    transform: translateY(0%) rotate(-45deg);
-} */
