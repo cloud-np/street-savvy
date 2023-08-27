@@ -2,6 +2,37 @@
   "sections": {
     "sv-carousel": {
       "type": "sv-carousel",
+      "blocks": {
+        "80f6069f-e6ae-44e8-8b34-0dd54cf62897": {
+          "type": "slide",
+          "settings": {
+            "slide_img": "shopify:\/\/shop_images\/womens-fashion-woman-denim-shorts-holding-pockets.jpg",
+            "slide_price": "from $79",
+            "slide_title": "Slide Title"
+          }
+        },
+        "e44d2a4a-6076-4be3-b1a2-e8596dfc0bec": {
+          "type": "slide",
+          "settings": {
+            "slide_img": "shopify:\/\/shop_images\/urban-mens-fashion-on-young-adult.jpg",
+            "slide_price": "from $779",
+            "slide_title": "Slide Title"
+          }
+        },
+        "0866dba5-f58f-4bd7-a913-9e3366af76ba": {
+          "type": "slide",
+          "settings": {
+            "slide_img": "shopify:\/\/shop_images\/man-in-white-and-light-tan-outfit.jpg",
+            "slide_price": "from $102",
+            "slide_title": "Slide Title"
+          }
+        }
+      },
+      "block_order": [
+        "80f6069f-e6ae-44e8-8b34-0dd54cf62897",
+        "e44d2a4a-6076-4be3-b1a2-e8596dfc0bec",
+        "0866dba5-f58f-4bd7-a913-9e3366af76ba"
+      ],
       "settings": {
       }
     },
