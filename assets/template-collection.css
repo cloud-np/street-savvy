@@ -78,3 +78,25 @@
 .collection__view-all a:not(.link) {
   margin-top: 1rem;
 }
+
+
+.collection-wrapper {
+  background: url('./image-mainhome.jpg');
+  padding-top: 1rem;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.collection__title, .title {
+  color: black;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.collection__description {
+  /* max-width: 400px; */
+}

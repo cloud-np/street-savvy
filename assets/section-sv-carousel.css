@@ -40,7 +40,9 @@
   .swiper-button-next::before,
   .swiper-button-next::after,
   .swiper-button-prev::before,
-  .swiper-button-prev::after{
+  .swiper-button-prev::after
+  .swiper-button-next > span
+  .swiper-button-prev > span {
     display: none;
   }
 }
@@ -59,10 +61,13 @@
 
 .swiper-button-prev > span {
     left: 50px;
+    color: white;
 }
 
 .swiper-button-next > span {
     right: 50px;
+    color: white;
+    font-weight: 500;
 }
 
 

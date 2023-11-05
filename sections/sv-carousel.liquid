@@ -25,11 +25,8 @@
         prevEl: ".swiper-button-prev"
       },
       on: {
-        init: () => {
+        init: function() {
           slidesNum = document.querySelectorAll(".swiper-slide").length;
-        },
-        slideChange: function() {
-          handleSlideChange(this, false);
         }
       },
       breakpoints: {
@@ -44,44 +41,10 @@
         }
       }
     });
-
-    function handleNextSlide() {
-      const swiper = document.querySelector('.swiper').swiper;
-      swiper.slideNext();
-    }
-
-    function handlePrevSlide() {
-      const swiper = document.querySelector('.swiper').swiper;
-      swiper.slidePrev();
-    }
-
-    function handleSlideChange(swiper = null, isManually = true) {
-      console.log("handleSlideChange");
-      if (isManually || swiper === null) {
-        return;
-      }
-
-      const prevBtnEl = document.querySelector('.swiper-button-prev span');
-      const prevBtnEl = document.querySelector('.swiper-button-prev span');
-      if (swiper.activeIndex === 0) {
-        prevBtnEl.textContent = `0${slidesNum}`;
-      } else if ((swiper.activeIndex + 1) === slidesNum) {
-        nextBtnEl.textContent = `01`;
-      } else {
-        prevBtnEl.textContent = `0${
-          swiper.activeIndex
-        }`;
-        nextBtnEl.textContent = `0${
-          swiper.activeIndex + 2
-        }`;
-      }
-    }
-
-// Attach event handlers
-    document.querySelector('.swiper-button-next').addEventListener('click', handleNextSlide);
-    document.querySelector('.swiper-button-prev').addEventListener('click', handlePrevSlide);
+    console.log("DOMContentLoaded");
   });
 </script>
+<script src="{{ 'section-sv-carousel.js' | asset_url }}" defer="defer"></script>
 
 {%- assign widths = '165, 360, 535, 750, 1070, 1500, 3840' -%}
 {%- capture sizes -%}
@@ -97,7 +60,7 @@
         {% assign price = block.settings.slide_price %}
         {% assign title = block.settings.slide_title %}
 
-        <div class="swiper-slide">
+        <div class="swiper-slide" id="slide-{{ forloop.index }}">
           <div class="swiper-slide-text-container">
             <p>{{ price }}</p>
             <h1>{{ title }}</h1>
