@@ -1,0 +1,82 @@
+<link
+  rel="stylesheet"
+  href="{{ 'fancy-3d-effect.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'">
+
+{%- assign widths = '165, 360, 535, 750, 1070, 1500, 3840' -%}
+{%- capture sizes -%}
+  (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px,
+  (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2) (min-width: 3840px) 4096px
+{%- endcapture -%}
+
+<div class="sv-carousel">
+  <h1>HELLOOO</h1>
+  {% comment %} <div class="swiper carousel-swiper">
+    <div class="swiper-wrapper">
+      {% for block in section.blocks %}
+        {% assign image = block.settings.slide_img %}
+        {% assign price = block.settings.slide_price %}
+        {% assign title = block.settings.slide_title %}
+
+        <div class="swiper-slide" id="slide-{{ forloop.index }}">
+          <div class="swiper-slide-text-container">
+            <p>{{ price }}</p>
+            <h1>{{ title }}</h1>
+          </div>
+          {%- if image != blank -%}
+            {{
+               image
+             | image_url: width: 1500
+             | image_tag: loading: 'lazy', sizes: sizes, widths: widths, class: 'swiper-slider-img' }}
+          {%- else -%}
+            {{ 'detailed-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+          {%- endif -%}
+        </div>
+      {% endfor %}
+    </div>
+    <div class="swiper-arrow-next-wrapper">
+      <div class="swiper-arrow swiper-button-next">
+        <span class="swiper-button-inner-numbers">
+          02
+        </span>
+      </div>
+    </div>
+    <div class="swiper-arrow-prev-wrapper">
+      <div class="swiper-arrow swiper-button-prev">
+        <span class="swiper-button-inner-numbers">
+          03
+        </span>
+      </div>
+    </div>
+  </div> {% endcomment %}
+</div>
+
+{% style %}
+  div:empty {
+    display: block;
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Carousel",
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    }
+  ],
+  "blocks": [
+
+  ],
+  "presets": [
+    {
+      "name": "Fancy 3D",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

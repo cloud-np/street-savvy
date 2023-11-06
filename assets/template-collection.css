@@ -89,14 +89,29 @@
   background-attachment: fixed;
 }
 
-.collection__title, .title {
+.collection__title__wrapper {
   color: black;
   display: flex;
   justify-content: center;
   text-align: center;
   flex-direction: column;
+  margin-top: 10rem;
+  align-items: center;
+}
+
+.collection__title__seperator {
+  margin-bottom: 2rem;
+}
+
+.collection__title {
+  color: black;
+  margin-bottom: 1rem;
 }
 
 .collection__description {
-  /* max-width: 400px; */
+  font-weight: 200;
+  margin-bottom: 3rem;
+  max-width: 700px;
+  font-weight: 300;
+  text-align: center;
 }

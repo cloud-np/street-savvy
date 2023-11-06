@@ -91,6 +91,19 @@
   }
 </style>
 
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  window.addEventListener('scroll', function () {
+    const nav = document.querySelector('.hero-header');
+    if (window.scrollY > 0) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+  });
+});
+</script>
+
 {%- style -%}
   .header {
     padding-top: {{ section.settings.padding_top | times: 0.5 | round: 0 }}px;
@@ -100,6 +113,13 @@
   .hero-header {
     position: absolute;
     width: 100%;
+    transition: 0.1s ease-in;
+  }
+
+  .scrolled {
+    background-color: black;
+    padding: 0;
+    max-width: 100%;
   }
 
   .sticky-header-flex {
@@ -174,7 +194,7 @@
       assign localization_forms = true
     endif
   -%}
-  <header class="header {% if section.settings.isForHero %} hero-header{% endif %} header--{{ section.settings.logo_position }} header--mobile-{{ section.settings.mobile_logo_position }} page-width{% if section.settings.menu_type_desktop == 'drawer' %} drawer-menu{% endif %}{% if section.settings.menu != blank %} header--has-menu{% endif %}{% if has_app_block %} header--has-app{% endif %}{% if social_links %} header--has-social{% endif %}{% if shop.customer_accounts_enabled %} header--has-account{% endif %}{% if localization_forms %} header--has-localizations{% endif %}">
+  <header class="header {% if template.name == 'index' %}hero-header{% endif %} header--{{ section.settings.logo_position }} header--mobile-{{ section.settings.mobile_logo_position }} page-width{% if section.settings.menu_type_desktop == 'drawer' %} drawer-menu{% endif %}{% if section.settings.menu != blank %} header--has-menu{% endif %}{% if has_app_block %} header--has-app{% endif %}{% if social_links %} header--has-social{% endif %}{% if shop.customer_accounts_enabled %} header--has-account{% endif %}{% if localization_forms %} header--has-localizations{% endif %}">
     {%- liquid
       if section.settings.menu != blank
         render 'header-drawer'
