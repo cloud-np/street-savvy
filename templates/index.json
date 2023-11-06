@@ -41,7 +41,7 @@
       "settings": {
         "title": "all time popular",
         "heading_size": "h1",
-        "description": "Stay on Trend with Popular and Cool Streetwear Fashion. Discover the latest trends in streetwear fashion and stay ahead of the game.",
+        "description": "<p>Stay on Trend with Popular and Cool Streetwear Fashion. Discover the latest trends in streetwear fashion and stay ahead of the game.</p>",
         "show_description": false,
         "description_style": "body",
         "collection": "all",
@@ -66,14 +66,12 @@
     },
     "fancy-3d-effect": {
       "type": "fancy-3d-effect",
-      "settings": {
-        "background_image": "shopify:\/\/shop_images\/urban-mens-fashion-on-young-adult.jpg"
-      }
+      "settings": {}
     }
   },
   "order": [
     "sv-carousel",
     "featured_collection",
-    "image-with-text"
+    "fancy-3d-effect"
   ]
 }
