@@ -95,7 +95,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('scroll', function () {
     const nav = document.querySelector('.hero-header');
-    if (window.scrollY > 0) {
+    if (window.scrollY > 0 && window.innerWidth > 990) {
       nav.classList.add('scrolled');
     } else {
       nav.classList.remove('scrolled');
@@ -138,6 +138,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  @media screen and (max-width: 990px) {
+    .scrolled {
+      background-color: none;
+    }
+  }
   @media screen and (min-width: 990px) {
     .header {
       padding-top: {{ section.settings.padding_top }}px;
